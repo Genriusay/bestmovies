@@ -61,3 +61,42 @@ export type RawPaged<T> = {
   total_results: number;
   results: T[];
 };
+export type RawVideo = {
+  key: string;
+  site: string;
+  type: string;
+  iso_639_1: string;
+};
+export type RawCastMember = {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string | null;
+};
+export type RawReleaseDates = {
+  results: {
+    iso_3166_1: string;
+    release_dates: { certification: string }[];
+  }[];
+};
+export type RawWatchRegion = {
+  flatrate?: RawProvider[];
+  rent?: RawProvider[];
+  buy?: RawProvider[];
+};
+export type RawMovieDetails = {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+  release_date: string;
+  runtime: number | null;
+  vote_average: number;
+  genres: Genre[];
+  videos: { results: RawVideo[] };
+  credits: { cast: RawCastMember[] };
+  recommendations: { results: RawMovie[] };
+  release_dates: RawReleaseDates;
+  "watch/providers": { results: Record<string, RawWatchRegion | undefined> };
+};

@@ -1,0 +1,671 @@
+{
+  "adult": false,
+  "backdrop_path": "/r08LxMJCbf1SiJIWeyH9aJmdqwC.jpg",
+  "belongs_to_collection": {
+    "id": 531241,
+    "name": "Homem-Aranha (Vingadores) Coleção",
+    "poster_path": "/dRedUPyBaPxPBNKJTsSr3qkdA9j.jpg",
+    "backdrop_path": "/AvnqpRwlEaYNVL6wzC4RN94EdSd.jpg"
+  },
+  "budget": 225000000,
+  "genres": [
+    {
+      "id": 878,
+      "name": "Ficção científica"
+    },
+    {
+      "id": 28,
+      "name": "Ação"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "homepage": "https://homemaranhaumnovodia.com.br/",
+  "id": 969681,
+  "imdb_id": "tt22084616",
+  "origin_country": [
+    "US"
+  ],
+  "original_language": "en",
+  "original_title": "Spider-Man: Brand New Day",
+  "overview": "",
+  "popularity": 1284.3495,
+  "poster_path": null,
+  "release_date": "2026-07-29",
+  "revenue": 2516291000,
+  "runtime": 143,
+  "softcore": false,
+  "status": "Released",
+  "tagline": "Um novo dia começa agora.",
+  "title": "Homem-Aranha: Um Novo Dia",
+  "video": false,
+  "vote_average": 8.5,
+  "vote_count": 5934,
+  "videos": {
+    "results": []
+  },
+  "credits": {
+    "cast": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1136406,
+        "known_for_department": "Acting",
+        "name": "Tom Holland",
+        "original_name": "Tom Holland",
+        "popularity": 18.093,
+        "profile_path": "/5OK84Wn1bIEIThFKcVoaN087mLj.jpg",
+        "cast_id": 4,
+        "character": "Peter Parker / Spider-Man",
+        "credit_id": "630cbd43ede1b00083c3badf",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 1590797,
+        "known_for_department": "Acting",
+        "name": "Sadie Sink",
+        "original_name": "Sadie Sink",
+        "popularity": 14.459,
+        "profile_path": "/92FddzBfK50XOUbtwjqHPraoGHy.jpg",
+        "cast_id": 30,
+        "character": "Jean Grey",
+        "credit_id": "67d1c1557761a3a68f60db95",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 2028037,
+        "known_for_department": "Acting",
+        "name": "Tramell Tillman",
+        "original_name": "Tramell Tillman",
+        "popularity": 2.4478,
+        "profile_path": "/bGb9u59fTIweCAdF0btl5cGqo26.jpg",
+        "cast_id": 72,
+        "character": "William 'Bill' Metzger",
+        "credit_id": "68a63cb7af8882c8675dd68b",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 505710,
+        "known_for_department": "Acting",
+        "name": "Zendaya",
+        "original_name": "Zendaya",
+        "popularity": 13.4007,
+        "profile_path": "/qGkBlyn1AwQpuFnRARMRwj0iHZp.jpg",
+        "cast_id": 49,
+        "character": "MJ",
+        "credit_id": "6855e165f57c8fc6a7ae16ed",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1649152,
+        "known_for_department": "Acting",
+        "name": "Jacob Batalon",
+        "original_name": "Jacob Batalon",
+        "popularity": 4.9054,
+        "profile_path": "/53YhaL4xw4Sb1ssoHkeSSBaO29c.jpg",
+        "cast_id": 50,
+        "character": "Ned Leeds",
+        "credit_id": "6855e1741460d776bcae16d3",
+        "order": 4
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 19498,
+        "known_for_department": "Acting",
+        "name": "Jon Bernthal",
+        "original_name": "Jon Bernthal",
+        "popularity": 11.2361,
+        "profile_path": "/bjcglF1IpDcZNs1HwFxakGpzBo6.jpg",
+        "cast_id": 48,
+        "character": "Frank Castle / Punisher",
+        "credit_id": "6855e0a503e381eb03fc71c3",
+        "order": 5
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 103,
+        "known_for_department": "Acting",
+        "name": "Mark Ruffalo",
+        "original_name": "Mark Ruffalo",
+        "popularity": 8.3831,
+        "profile_path": "/5GilHMOt5PAQh6rlUKZzGmaKEI7.jpg",
+        "cast_id": 55,
+        "character": "Bruce Banner / Hulk",
+        "credit_id": "688d2b3704c5bd1f52de627a",
+        "order": 6
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 1373737,
+        "known_for_department": "Acting",
+        "name": "Florence Pugh",
+        "original_name": "Florence Pugh",
+        "popularity": 14.5946,
+        "profile_path": "/1QfiLnofJFlOJOLCWaxyDpIN03v.jpg",
+        "cast_id": 233,
+        "character": "Yelena Belova / Black Widow",
+        "credit_id": "6a6965ee63534d03628620b1",
+        "order": 7
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 59693,
+        "known_for_department": "Acting",
+        "name": "Liza Colón-Zayas",
+        "original_name": "Liza Colón-Zayas",
+        "popularity": 1.928,
+        "profile_path": "/q2gHcef0wckji0AS8ZEO6cYx065.jpg",
+        "cast_id": 62,
+        "character": "Detective Jean DeWolff",
+        "credit_id": "6892802b7f4f75e1a499168d",
+        "order": 8
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 3141,
+        "known_for_department": "Acting",
+        "name": "Marisa Tomei",
+        "original_name": "Marisa Tomei",
+        "popularity": 6.8723,
+        "profile_path": "/vAQ10fvGfVyuJdMNKVMA4ZkacWL.jpg",
+        "cast_id": 236,
+        "character": "May Parker",
+        "credit_id": "6a69aeeda77a9356da3781cf",
+        "order": 9
+      },
+      {
+        "adult": false,
+        "gender": 1,
+        "id": 3489,
+        "known_for_department": "Acting",
+        "name": "Naomi Watts",
+        "original_name": "Naomi Watts",
+        "popularity": 5.3253,
+        "profile_path": "/7ysvff7ZhW388SIh2YjQ0XIryOn.jpg",
+        "cast_id": 234,
+        "character": "E.V. (voice)",
+        "credit_id": "6a6966094808c475a143b7b3",
+        "order": 10
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 829372,
+        "known_for_department": "Acting",
+        "name": "Michael Mando",
+        "original_name": "Michael Mando",
+        "popularity": 3.3646,
+        "profile_path": "/gvM2wG66bjEpiirdeQdyG9EzUfv.jpg",
+        "cast_id": 56,
+        "character": "Mac Gargan / Scorpion",
+        "credit_id": "688d2b539b015c0959de6259",
+        "order": 11
+      }
+    ],
+    "crew": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1144604,
+        "known_for_department": "Directing",
+        "name": "Destin Daniel Cretton",
+        "original_name": "Destin Daniel Cretton",
+        "popularity": 5.3106,
+        "profile_path": "/wtA2EtkvCyxu4oWECzqAF7G8IZH.jpg",
+        "credit_id": "66df615d4ab203f9ceb97151",
+        "department": "Directing",
+        "job": "Director"
+      }
+    ]
+  },
+  "recommendations": {
+    "page": 1,
+    "results": [
+      {
+        "adult": false,
+        "backdrop_path": "/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg",
+        "id": 634649,
+        "title": "Homem-Aranha: Sem Volta Para Casa",
+        "original_title": "Spider-Man: No Way Home",
+        "overview": "Peter Parker é desmascarado e não consegue mais separar sua vida normal dos grandes riscos de ser um super-herói. Quando ele pede ajuda ao Doutor Estranho, os riscos se tornam ainda mais perigosos, e o forçam a descobrir o que realmente significa ser o Homem-Aranha...",
+        "poster_path": "/xaKydnMw6wR1MBAjS5seGPVusbs.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          12,
+          878
+        ],
+        "popularity": 63.8185,
+        "release_date": "2021-12-15",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.947,
+        "vote_count": 23386
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/k0hlAzTryCYX1O1LyC6P8tAa8s0.jpg",
+        "id": 102382,
+        "title": "O Espetacular Homem-Aranha 2: A Ameaça de Electro",
+        "original_title": "The Amazing Spider-Man 2",
+        "overview": "O jovem Peter Parker está fascinado com as habilidades que adquiriu como Homem-Aranha. Agora, ele precisa lidar com dois problemas: o retorno de um velho amigo, Harry Osborn, e a chegada de um vilão mais forte e poderoso, Electro.",
+        "poster_path": "/cyMz4OfmNqpuQ02QQOQCbGxQjwK.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          12,
+          878
+        ],
+        "popularity": 29.0812,
+        "release_date": "2014-04-16",
+        "softcore": false,
+        "video": false,
+        "vote_average": 6.564,
+        "vote_count": 14868
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/m8JTwHFwX7I7JY5fPe4SjqejWag.jpg",
+        "id": 640146,
+        "title": "Homem-Formiga e a Vespa: Quantumania",
+        "original_title": "Ant-Man and the Wasp: Quantumania",
+        "overview": "Scott Lang e Hope van Dyne em suas jornadas como super-heróis. Scott e sua família são puxados para o Reino Quântico, onde eles precisarão enfrentar um novo e terrível vilão: Kang, o Conquistador e M.O.D.O.K..",
+        "poster_path": "/qZDafbofrZn46MmDwJS8fCSCe6l.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          12,
+          878
+        ],
+        "popularity": 26.8154,
+        "release_date": "2023-02-15",
+        "softcore": false,
+        "video": false,
+        "vote_average": 6.204,
+        "vote_count": 6198
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/7FWlcZq3r6525LWOcvO9kNWurN1.jpg",
+        "id": 271110,
+        "title": "Capitão América: Guerra Civil",
+        "original_title": "Captain America: Civil War",
+        "overview": "Depois do ataque de Ultron, os políticos decidem controlar os Vingadores, já que suas ações afetam toda a humanidade. A decisão coloca o Capitão América em rota de colisão com o Homem de Ferro.",
+        "poster_path": "/dsvUR5aEVSkB1Sro7nT6Khqik71.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          12,
+          28,
+          878
+        ],
+        "popularity": 35.663,
+        "release_date": "2016-04-27",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.454,
+        "vote_count": 24744
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/yF1eOkaYvwiORauRCPWznV9xVvi.jpg",
+        "id": 298618,
+        "title": "The Flash",
+        "original_title": "The Flash",
+        "overview": "Os mundos colidem quando Barry Allen usa seus superpoderes para viajar no tempo e mudar os acontecimentos do passado. Mas a tentativa de salvar sua família altera inadvertidamente o futuro.",
+        "poster_path": "/itYONYDHpJqTuu8BCXAtHxgpglq.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          878,
+          12
+        ],
+        "popularity": 23.6242,
+        "release_date": "2023-06-13",
+        "softcore": false,
+        "video": false,
+        "vote_average": 6.596,
+        "vote_count": 5344
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+        "id": 447365,
+        "title": "Guardiões da Galáxia: Vol. 3",
+        "original_title": "Guardians of the Galaxy Vol. 3",
+        "overview": "Peter Quill, que ainda está se recuperando da perda de Gamora, tem que reunir a sua equipe para defender o universo e proteger um dos seus. Uma missão que, se não for concluída com sucesso, pode levar ao fim dos Guardiões como os conhecemos.",
+        "poster_path": "/4yycSPnchdNAZirGkmCYQwTd3cr.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          878,
+          12,
+          28
+        ],
+        "popularity": 49.0995,
+        "release_date": "2023-05-03",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.932,
+        "vote_count": 8987
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+        "id": 100402,
+        "title": "Capitão América: O Soldado Invernal",
+        "original_title": "Captain America: The Winter Soldier",
+        "overview": "Após os eventos catastróficos em Nova York com Os Vingadores, Steve Rogers segue tentando se ajustar ao mundo moderno. Porém, quando um colega da agência S.H.I.E.L.D. é atacado, Steve se vê preso em uma rede de intrigas que ameaça colocar o mundo em risco. Em parceria com a Viúva Negra e Falcão, seu novo aliado, o Capitão América tem que enfrentar um misterioso e inesperado inimigo, o Soldado Invernal.",
+        "poster_path": "/9sTDXtIIfHza1rAbmHU2djyzEXA.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          12,
+          878
+        ],
+        "popularity": 16.7042,
+        "release_date": "2014-03-20",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.653,
+        "vote_count": 20624
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/aJn9XeesqsrSLKcHfHP4u5985hn.jpg",
+        "id": 283995,
+        "title": "Guardiões da Galáxia - Vol. 2",
+        "original_title": "Guardians of the Galaxy Vol. 2",
+        "overview": "Os Guardiões precisam lutar para manter sua recém descoberta família unida, enquanto descobrem os mistérios sobre o verdadeiro pai de Peter Quill.",
+        "poster_path": "/jGtBLu0JAKf5JxhWgmF68HROzCA.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          878,
+          12,
+          28
+        ],
+        "popularity": 27.9849,
+        "release_date": "2017-04-25",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.609,
+        "vote_count": 23620
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
+        "id": 10138,
+        "title": "Homem de Ferro 2",
+        "original_title": "Iron Man 2",
+        "overview": "Em um mundo ciente da existência do Homem de Ferro, o inventor bilionário Tony Stark sofre pressão de todos os lados para compartilhar sua tecnologia com as forças armadas. Ele resiste para divulgar os segredos de sua inigualável armadura, com medo de que estas informações caiam nas mãos erradas.",
+        "poster_path": "/vzROjQbgKWMVf2EldXipCcjpuBL.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          12,
+          28,
+          878
+        ],
+        "popularity": 31.924,
+        "release_date": "2010-04-28",
+        "softcore": false,
+        "video": false,
+        "vote_average": 6.856,
+        "vote_count": 23107
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/86IbFy98QjRIqg6WanKYb9tXNbJ.jpg",
+        "id": 24428,
+        "title": "Os Vingadores: The Avengers",
+        "original_title": "The Avengers",
+        "overview": "Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de dentro das instalações da S.H.I.E.L.D. Nick Fury, o diretor desta agência internacional que mantém a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças sem precedentes. Homem de Ferro, Capitão América, Hulk, Thor, Viúva Negra e Gavião Arqueiro formam o time dos sonhos de Fury, mas eles precisam aprender a colocar os egos de lado e agir como um grupo em prol da humanidade.",
+        "poster_path": "/PtSapjHdDjlVcsqdEo0u7rDE6i.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          878,
+          28,
+          12
+        ],
+        "popularity": 58.5907,
+        "release_date": "2012-04-25",
+        "softcore": false,
+        "video": false,
+        "vote_average": 8.082,
+        "vote_count": 40114
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/sTQNRqLbfCXolrb5CizAW1dj528.jpg",
+        "id": 246655,
+        "title": "X-Men: Apocalipse",
+        "original_title": "X-Men: Apocalypse",
+        "overview": "Apocalipse, o primeiro mutante de todos, consegue retornar à vida após milhares de anos. Agora, ele sai à procura de seguidores para dominar o mundo. Caberá aos X-Men se unirem para impedir os planos do vilão e evitar uma catástofre mundial.",
+        "poster_path": "/czKpsvSmpzMoOuuJXGjBHMoH1qq.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          878,
+          14,
+          28
+        ],
+        "popularity": 21.4685,
+        "release_date": "2016-05-18",
+        "softcore": false,
+        "video": false,
+        "vote_average": 6.53,
+        "vote_count": 14221
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/8eRscFbRYl681zDfkjv1jjW1KAA.jpg",
+        "id": 1452,
+        "title": "Superman: O Retorno",
+        "original_title": "Superman Returns",
+        "overview": "Superman retorna à Terra após cinco anos de ausência e descobre que Lois Lane seguiu com sua vida, sendo agora mãe de uma criança e que Lex Luthor saiu da prisão e planejava botar em prática um plano que causará a morte de bilhões de pessoas.",
+        "poster_path": "/jLmb769DnH3UjSDThwmCNVnr6t9.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          878,
+          28,
+          12
+        ],
+        "popularity": 13.7816,
+        "release_date": "2006-06-28",
+        "softcore": false,
+        "video": false,
+        "vote_average": 5.831,
+        "vote_count": 4745
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+        "id": 453395,
+        "title": "Doutor Estranho no Multiverso da Loucura",
+        "original_title": "Doctor Strange in the Multiverse of Madness",
+        "overview": "Doutor Estranho, com a ajuda de aliados místicos antigos e novos, atravessa as perigosas realidades alternativas e alucinantes do Multiverso para enfrentar um novo adversário misterioso.",
+        "poster_path": "/7pLIVfovuIf2KQOOvMsKx3Lanrg.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          14,
+          28,
+          12
+        ],
+        "popularity": 40.9952,
+        "release_date": "2022-05-04",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.221,
+        "vote_count": 11006
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+        "id": 986056,
+        "title": "Thunderbolts*",
+        "original_title": "Thunderbolts*",
+        "overview": "Depois de se verem presos em uma armadilha mortal, uma equipe não convencional de sete anti-heróis deve embarcar em uma missão perigosa que os forçará a confrontar os cantos mais sombrios de seus passados.",
+        "poster_path": "/zkysYSX51ddSPQuiDTjkGCS6vyh.jpg",
+        "media_type": "movie",
+        "original_language": "en",
+        "genre_ids": [
+          28,
+          878,
+          12
+        ],
+        "popularity": 34.8545,
+        "release_date": "2025-04-30",
+        "softcore": false,
+        "video": false,
+        "vote_average": 7.297,
+        "vote_count": 4213
+      }
+    ],
+    "total_pages": 23,
+    "total_results": 452
+  },
+  "release_dates": {
+    "results": [
+      {
+        "iso_3166_1": "US",
+        "release_dates": [
+          {
+            "certification": "PG-13",
+            "descriptors": [],
+            "iso_639_1": "",
+            "note": "Los Angeles, California",
+            "release_date": "2026-07-27T00:00:00.000Z",
+            "type": 1
+          },
+          {
+            "certification": "PG-13",
+            "descriptors": [],
+            "iso_639_1": "",
+            "note": "IMAX",
+            "release_date": "2026-08-06T00:00:00.000Z",
+            "type": 2
+          },
+          {
+            "certification": "PG-13",
+            "descriptors": [],
+            "iso_639_1": "",
+            "note": "",
+            "release_date": "2026-07-31T00:00:00.000Z",
+            "type": 3
+          },
+          {
+            "certification": "PG-13",
+            "descriptors": [],
+            "iso_639_1": "",
+            "note": "",
+            "release_date": "2026-10-06T00:00:00.000Z",
+            "type": 4
+          },
+          {
+            "certification": "PG-13",
+            "descriptors": [],
+            "iso_639_1": "",
+            "note": "4K Ultra HD / Blu-ray / DVD",
+            "release_date": "2026-12-15T00:00:00.000Z",
+            "type": 5
+          }
+        ]
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "US": {
+        "link": "https://www.themoviedb.org/movie/969681-spider-man-brand-new-day/watch?locale=US",
+        "rent": [
+          {
+            "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+            "provider_id": 10,
+            "provider_name": "Amazon Video",
+            "display_priority": 10
+          },
+          {
+            "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+            "provider_id": 2,
+            "provider_name": "Apple TV Store",
+            "display_priority": 11
+          },
+          {
+            "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+            "provider_id": 3,
+            "provider_name": "Google Play Movies",
+            "display_priority": 22
+          },
+          {
+            "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+            "provider_id": 192,
+            "provider_name": "YouTube",
+            "display_priority": 23
+          },
+          {
+            "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+            "provider_id": 7,
+            "provider_name": "Fandango At Home",
+            "display_priority": 39
+          }
+        ],
+        "buy": [
+          {
+            "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+            "provider_id": 10,
+            "provider_name": "Amazon Video",
+            "display_priority": 10
+          },
+          {
+            "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+            "provider_id": 2,
+            "provider_name": "Apple TV Store",
+            "display_priority": 11
+          },
+          {
+            "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+            "provider_id": 3,
+            "provider_name": "Google Play Movies",
+            "display_priority": 22
+          },
+          {
+            "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+            "provider_id": 192,
+            "provider_name": "YouTube",
+            "display_priority": 23
+          },
+          {
+            "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+            "provider_id": 7,
+            "provider_name": "Fandango At Home",
+            "display_priority": 39
+          }
+        ]
+      }
+    }
+  }
+}
