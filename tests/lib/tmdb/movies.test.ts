@@ -26,6 +26,7 @@ vi.mock("@/lib/tmdb/providers", async (orig) => ({
 }));
 
 import { tmdbFetch } from "@/lib/tmdb/client";
+import * as providers from "@/lib/tmdb/providers";
 import {
   discoverMovies,
   getFlatrateProviders,
@@ -87,6 +88,29 @@ describe("movies", () => {
     const r = await getServiceRow("max", 28);
     expect(r).toHaveLength(20);
     expect(mocked.mock.calls[0][1]).toMatchObject({ with_watch_providers: "384", with_genres: 28, page: 1 });
+  });
+  it("discover sem IDs não chama a API", async () => {
+    expect(await discoverMovies([])).toEqual({ page: 1, totalPages: 0, results: [] });
+    expect(tmdbFetch).not.toHaveBeenCalled();
+  });
+  describe("serviço sem IDs", () => {
+    const none = {
+      netflix: [], "prime-video": [], "disney-plus": [], max: [], globoplay: [], "apple-tv-plus": [],
+    };
+    it("getServiceRow → [] sem chamar a API", async () => {
+      vi.mocked(providers.getServiceIds).mockResolvedValueOnce(none);
+      expect(await getServiceRow("max")).toEqual([]);
+      expect(tmdbFetch).not.toHaveBeenCalled();
+    });
+    it("getTop10 e getHero → [] se todos vazios", async () => {
+      vi.mocked(providers.getServiceIds).mockResolvedValue(none);
+      expect(await getTop10()).toEqual([]);
+      expect(await getHero()).toEqual([]);
+      expect(tmdbFetch).not.toHaveBeenCalled();
+      vi.mocked(providers.getServiceIds).mockResolvedValue({ ...none, netflix: [8] });
+      await getTop10();
+      expect(mocked.mock.calls[0][1]?.with_watch_providers).toBe("8");
+    });
   });
   it("busca vazia não chama a API", async () => {
     expect(await searchMovies("   ")).toEqual({ page: 1, totalPages: 0, results: [] });

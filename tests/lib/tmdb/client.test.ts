@@ -70,6 +70,14 @@ describe("tmdb client", () => {
     await expect(tmdbFetch("/movie/1")).rejects.not.toThrow(/segredo/);
   });
 
+  it("sem token lança erro claro e não chama o fetch", async () => {
+    vi.stubEnv("TMDB_READ_TOKEN", "");
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    await expect(tmdbFetch("/movie/1")).rejects.toThrow("TMDB_READ_TOKEN não configurado");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
   it("imageUrl", () => {
     expect(imageUrl("/a.jpg", "w342")).toBe("https://image.tmdb.org/t/p/w342/a.jpg");
     expect(imageUrl(null, "w342")).toBeNull();

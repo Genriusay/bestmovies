@@ -1,5 +1,6 @@
 import 'server-only';
 import { cacheLife } from 'next/cache';
+import { yearOf } from '../format';
 import type { MovieSummary, RawMovie } from './types';
 export { imageUrl } from './images';
 
@@ -35,9 +36,11 @@ async function cachedGet(
 ): Promise<unknown> {
   'use cache';
   cacheLife({ revalidate: revalidateSeconds });
+  const token = process.env.TMDB_READ_TOKEN;
+  if (!token) throw new Error('TMDB_READ_TOKEN não configurado');
   const res = await fetch(url, {
     headers: {
-      Authorization: `Bearer ${process.env.TMDB_READ_TOKEN}`,
+      Authorization: `Bearer ${token}`,
       Accept: 'application/json',
     },
   });
@@ -58,13 +61,12 @@ export async function tmdbFetch<T>(
 }
 
 export function toMovieSummary(raw: RawMovie): MovieSummary {
-  const year = raw.release_date ? Number(raw.release_date.slice(0, 4)) : NaN;
   return {
     id: raw.id,
     title: raw.title,
     posterPath: raw.poster_path,
     backdropPath: raw.backdrop_path,
-    year: Number.isNaN(year) ? null : year,
+    year: yearOf(raw.release_date),
     voteAverage: raw.vote_average,
     genreIds: raw.genre_ids,
   };

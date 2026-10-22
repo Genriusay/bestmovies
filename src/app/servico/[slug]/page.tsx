@@ -5,7 +5,7 @@ import { MovieGrid } from "@/components/MovieGrid";
 import { Pagination } from "@/components/Pagination";
 import { RowsSkeleton } from "@/components/RowsSkeleton";
 import { ServiceBadge } from "@/components/ServiceBadge";
-import { parseGenreParam, parsePageParam } from "@/lib/params";
+import { fetchClampedPage, parseGenreParam } from "@/lib/params";
 import { getGenres, discoverMovies } from "@/lib/tmdb/movies";
 import { getService, getServiceIds, SERVICES } from "@/lib/tmdb/providers";
 
@@ -31,15 +31,19 @@ async function ServiceContent({
   const genreId = genre?.id;
   const providerIds = ids[service.slug] ?? [];
 
-  const requested = parsePageParam(pagina);
-  let page = requested;
-  let data = await discoverMovies(providerIds, { genreId, page });
-  // A página pedida é limitada ao total, que só se conhece após a primeira busca.
-  const clamped = parsePageParam(pagina, data.totalPages);
-  if (clamped !== requested) {
-    page = clamped;
-    data = await discoverMovies(providerIds, { genreId, page });
+  if (providerIds.length === 0) {
+    return (
+      <>
+        <h1 className="flex items-center gap-2 px-4 pt-6 text-xl font-bold">
+          <ServiceBadge slug={service.slug} /> Todos os filmes
+        </h1>
+        <p className="px-4 py-8 text-zinc-400">Catálogo indisponível no momento.</p>
+      </>
+    );
   }
+
+  const data = await fetchClampedPage((p) => discoverMovies(providerIds, { genreId, page: p }), pagina);
+  const page = data.page;
 
   const basePath = `/servico/${service.slug}`;
   const hrefFor = (p: number) => {

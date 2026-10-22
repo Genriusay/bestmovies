@@ -9,7 +9,7 @@ const ROWS: { key: keyof WatchOptions; label: string }[] = [
 ];
 
 function Logo({ provider }: { provider: ProviderInfo }) {
-  const src = imageUrl(provider.logoPath, "w185");
+  const src = imageUrl(provider.logoPath, "w92");
   return (
     <li>
       {src ? (

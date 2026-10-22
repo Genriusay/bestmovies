@@ -1,5 +1,6 @@
 import "server-only";
 import { tmdbFetch, toMovieSummary } from "./client";
+import { MAX_PAGES } from "@/lib/params";
 import { SERVICES, getServiceIds, groupProviderVariants, toProviderInfo } from "./providers";
 import type {
   Genre,
@@ -12,8 +13,6 @@ import type {
 } from "./types";
 import type { ServiceSlug } from "./providers";
 
-const MAX_PAGES = 500;
-
 export async function getGenres(): Promise<Genre[]> {
   const data = await tmdbFetch<{ genres: Genre[] }>("/genre/movie/list", {}, 86400);
   return data.genres;
@@ -23,6 +22,8 @@ export async function discoverMovies(
   providerIds: number[],
   opts: { genreId?: number | null; page?: number } = {},
 ): Promise<Paged<MovieSummary>> {
+  // Sem IDs, with_watch_providers vazio devolveria filmes sem filtro de serviço.
+  if (providerIds.length === 0) return { page: 1, totalPages: 0, results: [] };
   const data = await tmdbFetch<RawPaged<RawMovie>>(
     "/discover/movie",
     {
@@ -44,7 +45,7 @@ export async function discoverMovies(
 
 async function allServiceIds(): Promise<number[]> {
   const ids = await getServiceIds();
-  return SERVICES.flatMap((s) => ids[s.slug]);
+  return SERVICES.flatMap((s) => ids[s.slug] ?? []);
 }
 
 export async function getTop10(genreId?: number | null): Promise<MovieSummary[]> {
@@ -61,7 +62,8 @@ export async function getServiceRow(
   slug: ServiceSlug,
   genreId?: number | null,
 ): Promise<MovieSummary[]> {
-  const ids = (await getServiceIds())[slug];
+  const ids = (await getServiceIds())[slug] ?? [];
+  if (ids.length === 0) return [];
   const { results } = await discoverMovies(ids, { genreId, page: 1 });
   return results.slice(0, 20);
 }
