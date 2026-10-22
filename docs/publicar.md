@@ -130,12 +130,14 @@ git push
 ## Se algo der errado
 
 **A publicação falhou ("Build failed", em vermelho).**
+A chave do TMDB não é usada durante a publicação, então ela não costuma ser a causa. Na Vercel, abra **Deployments**, clique na publicação que falhou e leia o **Build Log** (as últimas linhas em vermelho dizem o motivo). Se não entender a mensagem, copie o texto do erro e peça ajuda.
+
+**O site abre, mas mostra "Não foi possível carregar os filmes agora".**
+Quase sempre a chave está faltando ou errada na Vercel. Faça assim:
 1. No painel da Vercel, abra o projeto → **Settings → Environment Variables**.
 2. Confira se o nome é exatamente `TMDB_READ_TOKEN` e se o valor é o **API Read Access Token** inteiro, sem espaços.
 3. Corrija o que estiver errado, vá em **Deployments**, clique nos três pontinhos da última publicação e escolha **Redeploy**.
-
-**O site abre, mas mostra "Não foi possível carregar os filmes agora".**
-Quase sempre a chave está faltando ou errada na Vercel. Faça os mesmos passos acima (conferir nome e valor, e depois **Redeploy**). A chave só passa a valer em publicações feitas *depois* de ela ser salva, por isso o Redeploy é necessário.
+A chave só passa a valer em publicações feitas *depois* de ela ser salva, por isso o Redeploy é necessário.
 
 **O `git push` pede senha ou dá erro de permissão.**
 Entre no GitHub pelo navegador quando a janela abrir. Se a janela não abrir, feche e abra o VS Code e tente de novo.

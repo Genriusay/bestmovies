@@ -1,5 +1,6 @@
 import "server-only";
 import { TmdbError, tmdbFetch, toMovieSummary } from "./client";
+import { yearOf } from "../format";
 import { groupProviderVariants, toProviderInfo } from "./providers";
 import type {
   MovieDetailsView,
@@ -48,14 +49,13 @@ export function mapMovieDetails(raw: RawMovieDetails): MovieDetailsView {
   const br = raw["watch/providers"]?.results?.BR;
   const group = (list?: RawProvider[]): ProviderInfo[] =>
     groupProviderVariants((list ?? []).map(toProviderInfo));
-  const year = raw.release_date ? Number(raw.release_date.slice(0, 4)) : NaN;
   return {
     id: raw.id,
     title: raw.title,
     overview: raw.overview ? raw.overview : null,
     posterPath: raw.poster_path,
     backdropPath: raw.backdrop_path,
-    year: Number.isNaN(year) ? null : year,
+    year: yearOf(raw.release_date),
     runtimeMinutes: raw.runtime ? raw.runtime : null,
     certification: pickCertification(raw),
     voteAverage: raw.vote_average,

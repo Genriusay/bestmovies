@@ -65,6 +65,7 @@ async function MovieContent({ params }: { params: Promise<{ id: string }> }) {
 
   const backdrop = imageUrl(movie.backdropPath, "w1280");
   const poster = imageUrl(movie.posterPath, "w342");
+  const rating = formatRating(movie.voteAverage);
   const meta = [movie.year, formatRuntime(movie.runtimeMinutes), movie.certification].filter(
     Boolean,
   );
@@ -100,9 +101,12 @@ async function MovieContent({ params }: { params: Promise<{ id: string }> }) {
           <h1 className="text-xl font-bold leading-tight">{movie.title}</h1>
           {meta.length > 0 && <p className="text-sm text-zinc-400">{meta.join(" · ")}</p>}
           <p className="text-sm">
-            <span className="text-accent">{formatRating(movie.voteAverage)}</span>
+            {rating && <span className="text-accent">{rating}</span>}
             {movie.genres.length > 0 && (
-              <span className="text-zinc-400"> · {movie.genres.map((g) => g.name).join(", ")}</span>
+              <span className="text-zinc-400">
+                {rating ? " · " : ""}
+                {movie.genres.map((g) => g.name).join(", ")}
+              </span>
             )}
           </p>
         </div>

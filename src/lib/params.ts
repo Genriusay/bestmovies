@@ -1,6 +1,6 @@
-import type { Genre } from "@/lib/tmdb/types";
+import type { Genre, Paged } from "@/lib/tmdb/types";
 
-const MAX_PAGES = 500;
+export const MAX_PAGES = 500;
 
 function first(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
@@ -21,4 +21,15 @@ export function parsePageParam(value: string | string[] | undefined, totalPages?
   const v = first(value);
   if (!v || !/^\d+$/.test(v)) return 1;
   return Math.min(Math.max(1, Number(v)), max);
+}
+
+export async function fetchClampedPage<T>(
+  fetchPage: (page: number) => Promise<Paged<T>>,
+  requested: string | string[] | undefined,
+): Promise<Paged<T>> {
+  const first = parsePageParam(requested);
+  const data = await fetchPage(first);
+  // A página pedida é limitada ao total, que só se conhece após a primeira busca.
+  const clamped = parsePageParam(requested, data.totalPages);
+  return clamped === first ? data : fetchPage(clamped);
 }

@@ -1,11 +1,22 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Pagination } from "@/components/Pagination";
 import { RowsSkeleton } from "@/components/RowsSkeleton";
 import { SearchResults } from "@/components/SearchResults";
-import { parsePageParam } from "@/lib/params";
+import { fetchClampedPage } from "@/lib/params";
 import { getFlatrateProviders, searchMovies } from "@/lib/tmdb/movies";
 
 type SearchParams = Promise<{ q?: string | string[]; pagina?: string | string[] }>;
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}): Promise<Metadata> {
+  const { q } = await searchParams;
+  const query = (Array.isArray(q) ? q[0] : q)?.trim() ?? "";
+  return { title: query ? `Busca: ${query}` : "Busca" };
+}
 
 async function BuscaContent({ searchParams }: { searchParams: SearchParams }) {
   const { q, pagina } = await searchParams;
@@ -14,14 +25,8 @@ async function BuscaContent({ searchParams }: { searchParams: SearchParams }) {
     return <p className="px-4 py-8 text-zinc-400">Digite o nome de um filme para buscar.</p>;
   }
 
-  const requested = parsePageParam(pagina);
-  let page = requested;
-  let data = await searchMovies(query, page);
-  const clamped = parsePageParam(pagina, data.totalPages);
-  if (clamped !== requested) {
-    page = clamped;
-    data = await searchMovies(query, page);
-  }
+  const data = await fetchClampedPage((p) => searchMovies(query, p), pagina);
+  const page = data.page;
 
   const results = await Promise.all(
     data.results.map(async (movie) => ({
