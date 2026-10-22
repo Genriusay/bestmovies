@@ -36,3 +36,10 @@ it("mostra no máximo 4 logos", () => {
   expect(screen.getAllByAltText(/^Serv /)).toHaveLength(4);
   expect(screen.queryByText("Não disponível em streaming no BR")).not.toBeInTheDocument();
 });
+
+it("providers null (falha na consulta) não mostra logos nem aviso", () => {
+  render(<SearchResults query="matrix" results={[{ movie, providers: null }]} />);
+  expect(screen.getByText("Matrix")).toBeInTheDocument();
+  expect(screen.queryByAltText(/^Serv /)).not.toBeInTheDocument();
+  expect(screen.queryByText("Não disponível em streaming no BR")).not.toBeInTheDocument();
+});

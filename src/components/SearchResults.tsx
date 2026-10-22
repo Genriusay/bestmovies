@@ -7,7 +7,7 @@ import type { MovieSummary, ProviderInfo } from "@/lib/tmdb/types";
 
 const MAX_LOGOS = 4;
 
-export type SearchResult = { movie: MovieSummary; providers: ProviderInfo[] };
+export type SearchResult = { movie: MovieSummary; providers: ProviderInfo[] | null };
 
 export function SearchResults({ query, results }: { query: string; results: SearchResult[] }) {
   if (results.length === 0) {
@@ -29,7 +29,7 @@ export function SearchResults({ query, results }: { query: string; results: Sear
               {movie.year !== null && movie.voteAverage > 0 && " · "}
               {movie.voteAverage > 0 && <span>{formatRating(movie.voteAverage)}</span>}
             </p>
-            {providers.length === 0 ? (
+            {providers === null ? null : providers.length === 0 ? (
               <p className="mt-2 text-sm text-zinc-400">Não disponível em streaming no BR</p>
             ) : (
               <ul className="mt-2 flex gap-2">

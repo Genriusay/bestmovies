@@ -26,7 +26,7 @@ async function BuscaContent({ searchParams }: { searchParams: SearchParams }) {
   const results = await Promise.all(
     data.results.map(async (movie) => ({
       movie,
-      providers: await getFlatrateProviders(movie.id).catch(() => []),
+      providers: await getFlatrateProviders(movie.id).catch(() => null),
     })),
   );
 
