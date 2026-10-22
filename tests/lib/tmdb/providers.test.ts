@@ -46,6 +46,18 @@ describe("providers", () => {
   it("fixture real do BR resolve os 6 serviços", () => {
     const ids = resolveServiceIds(fixture.results.map(toProviderInfo));
     for (const s of SERVICES) expect(ids[s.slug].length).toBeGreaterThan(0);
+    expect(ids.netflix).toEqual([8, 1796]);
+    expect(ids["prime-video"]).toEqual([119, 2100]);
+    const channelIds = fixture.results
+      .filter((p) => /Channel/i.test(p.provider_name))
+      .map((p) => p.provider_id);
+    expect(channelIds.length).toBeGreaterThan(0);
+    const all = Object.values(ids).flat();
+    for (const id of channelIds) expect(all).not.toContain(id);
+  });
+  it("nomes de exibição seguem as marcas atuais", () => {
+    expect(getService("max")?.name).toBe("HBO Max");
+    expect(getService("apple-tv-plus")?.name).toBe("Apple TV");
   });
   it("getService inválido → null", () => expect(getService("inexistente")).toBeNull());
 });
