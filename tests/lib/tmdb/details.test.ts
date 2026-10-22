@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { RawMovie, RawVideo } from "@/lib/tmdb/types";
 import full from "../../fixtures/movie-details.json";
 import minimal from "../../fixtures/movie-details-minimal.json";
 
@@ -13,7 +14,7 @@ vi.mock("@/lib/tmdb/client", () => {
   return {
     tmdbFetch: vi.fn(),
     TmdbError,
-    toMovieSummary: (r: any) => ({
+    toMovieSummary: (r: Partial<RawMovie> & { id: number }) => ({
       id: r.id,
       title: r.title,
       posterPath: r.poster_path,
@@ -74,7 +75,7 @@ describe("mapMovieDetails", () => {
   });
 
   it("usa en e depois qualquer idioma quando não há pt", () => {
-    const mk = (results: any[]) => mapMovieDetails({ ...minimalRaw, videos: { results } }).trailerYoutubeKey;
+    const mk = (results: RawVideo[]) => mapMovieDetails({ ...minimalRaw, videos: { results } }).trailerYoutubeKey;
     expect(
       mk([
         { key: "X", site: "YouTube", type: "Trailer", iso_639_1: "es" },

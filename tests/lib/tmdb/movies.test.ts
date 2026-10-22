@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { RawMovie } from "@/lib/tmdb/types";
 
 vi.mock("@/lib/tmdb/client", () => ({
   tmdbFetch: vi.fn(),
-  toMovieSummary: (r: any) => ({
+  toMovieSummary: (r: Partial<RawMovie> & { id: number }) => ({
     id: r.id,
     title: r.title,
     posterPath: r.poster_path,
