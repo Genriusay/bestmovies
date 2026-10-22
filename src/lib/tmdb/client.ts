@@ -1,9 +1,9 @@
 import 'server-only';
 import { cacheLife } from 'next/cache';
 import type { MovieSummary, RawMovie } from './types';
+export { imageUrl } from './images';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
 type Params = Record<string, string | number | undefined>;
 
@@ -55,13 +55,6 @@ export async function tmdbFetch<T>(
     path,
     revalidateSeconds,
   )) as T;
-}
-
-export function imageUrl(
-  path: string | null,
-  size: 'w185' | 'w342' | 'w780' | 'w1280' | 'original',
-): string | null {
-  return path ? `${IMAGE_BASE_URL}/${size}${path}` : null;
 }
 
 export function toMovieSummary(raw: RawMovie): MovieSummary {
