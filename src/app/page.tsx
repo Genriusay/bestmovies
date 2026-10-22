@@ -24,7 +24,7 @@ async function HomeContent({ searchParams }: { searchParams: Promise<{ genero?: 
 
   return (
     <>
-      <HeroCarousel movies={hero} />
+      <HeroCarousel key={genreId ?? "all"} movies={hero} genres={genres} />
       <GenreChips genres={genres} activeId={genreId} basePath="/" />
       <MovieRow
         ranked

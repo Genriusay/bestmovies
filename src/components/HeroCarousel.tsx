@@ -5,27 +5,39 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { formatRating } from "@/lib/format";
 import { imageUrl } from "@/lib/tmdb/images";
-import type { MovieSummary } from "@/lib/tmdb/types";
+import type { Genre, MovieSummary } from "@/lib/tmdb/types";
 
 const INTERVAL_MS = 6000;
 
-export function HeroCarousel({ movies }: { movies: MovieSummary[] }) {
+export function HeroCarousel({ movies, genres = [] }: { movies: MovieSummary[]; genres?: Genre[] }) {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const count = movies.length;
 
   useEffect(() => {
-    if (count < 2) return;
+    if (count < 2 || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => setIndex((i) => (i + 1) % count), INTERVAL_MS);
     return () => clearInterval(id);
-  }, [count, index]);
+  }, [count, index, paused]);
 
   if (count === 0) return null;
   const movie = movies[index % count];
-  const src = imageUrl(movie.backdropPath, "w780");
+  const src = imageUrl(movie.backdropPath, "w1280");
+
+  const genreName = genres.find((g) => g.id === movie.genreIds[0])?.name;
 
   return (
-    <section aria-label="Filmes em destaque" className="px-4 pt-4">
+    <section
+      aria-label="Filmes em destaque"
+      className="px-4 pt-4"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false);
+      }}
+    >
       <div className="relative flex h-56 flex-col justify-end gap-1 overflow-hidden rounded-xl bg-gradient-to-br from-violet-900 to-zinc-900 p-4 sm:h-80 sm:p-6">
         {src && (
           <Image
@@ -42,7 +54,7 @@ export function HeroCarousel({ movies }: { movies: MovieSummary[] }) {
         <div className="relative flex flex-col gap-1">
           <h2 className="text-xl font-bold sm:text-3xl">{movie.title}</h2>
           <p className="text-sm text-zinc-300">
-            {[movie.year, formatRating(movie.voteAverage)].filter(Boolean).join(" · ")}
+            {[movie.year, genreName, formatRating(movie.voteAverage)].filter(Boolean).join(" · ")}
           </p>
           <Link
             href={`/filme/${movie.id}`}

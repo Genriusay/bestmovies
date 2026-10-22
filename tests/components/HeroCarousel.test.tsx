@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { act, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import type { MovieSummary } from "@/lib/tmdb/types";
 
@@ -39,6 +39,34 @@ describe("HeroCarousel", () => {
     act(() => { screen.getByRole("button", { name: "Ir para o destaque 2" }).click(); });
     expect(screen.getByRole("heading", { name: "Filme 2" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ver onde assistir/i })).toHaveAttribute("href", "/filme/2");
+  });
+  it("pausa com hover e foco, retoma ao sair", () => {
+    vi.useFakeTimers();
+    mockMotion(false);
+    render(<HeroCarousel movies={[m(1), m(2)]} />);
+    const section = screen.getByRole("region", { name: "Filmes em destaque" });
+    fireEvent.mouseEnter(section);
+    act(() => { vi.advanceTimersByTime(12000); });
+    expect(screen.getByRole("heading", { name: "Filme 1" })).toBeInTheDocument();
+    fireEvent.mouseLeave(section);
+    act(() => { vi.advanceTimersByTime(6000); });
+    expect(screen.getByRole("heading", { name: "Filme 2" })).toBeInTheDocument();
+    fireEvent.focus(screen.getByRole("link", { name: /ver onde assistir/i }));
+    act(() => { vi.advanceTimersByTime(12000); });
+    expect(screen.getByRole("heading", { name: "Filme 2" })).toBeInTheDocument();
+  });
+  it("mostra o primeiro gênero conhecido e omite se desconhecido", () => {
+    mockMotion(true);
+    const genres = [{ id: 28, name: "Ação" }];
+    const { rerender } = render(<HeroCarousel movies={[{ ...m(1), genreIds: [28, 12] }]} genres={genres} />);
+    expect(screen.getByText("2020 · Ação · ★ 7.5")).toBeInTheDocument();
+    rerender(<HeroCarousel movies={[{ ...m(1), genreIds: [99] }]} genres={genres} />);
+    expect(screen.getByText("2020 · ★ 7.5")).toBeInTheDocument();
+  });
+  it("sem nota (0) não mostra a nota", () => {
+    mockMotion(true);
+    render(<HeroCarousel movies={[{ ...m(1), voteAverage: 0 }]} />);
+    expect(screen.getByText("2020")).toBeInTheDocument();
   });
   it("vazio não renderiza", () => {
     mockMotion(false);
