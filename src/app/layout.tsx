@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aulamovies",
+  title: "Bestmovies",
   description: "Descubra filmes disponíveis nos streamings do Brasil.",
 };
 

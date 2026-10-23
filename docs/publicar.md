@@ -1,4 +1,4 @@
-# Como colocar o Aulamovies na internet
+# Como colocar o Bestmovies na internet
 
 Este guia leva você, passo a passo, de "o site só funciona no meu computador" até "qualquer pessoa abre o site por um link". Não precisa saber programar. Siga na ordem e confira o que aparece depois de cada passo.
 
@@ -24,12 +24,12 @@ Você vai usar três coisas, todas gratuitas:
 "Repositório" é a pasta do projeto dentro do GitHub.
 
 1. Entre em https://github.com/new.
-2. Em **Repository name**, escreva `aulamovies`.
+2. Em **Repository name**, escreva `bestmovies`.
 3. Escolha **Public** (ou **Private**, tanto faz para a Vercel).
 4. **Não marque nada** em "Add a README file", "Add .gitignore" e "Choose a license". O repositório precisa nascer vazio.
 5. Clique em **Create repository**.
 
-**Você deve ver:** uma página quase vazia com o título "Quick setup" e um endereço parecido com `https://github.com/SEU-USUARIO/aulamovies.git`. Deixe essa página aberta.
+**Você deve ver:** uma página quase vazia com o título "Quick setup" e um endereço parecido com `https://github.com/SEU-USUARIO/bestmovies.git`. Deixe essa página aberta.
 
 ## 3. Enviar o código para o GitHub
 
@@ -40,7 +40,7 @@ O projeto já está preparado no seu computador. Falta só avisar de onde é o "
 3. Copie e cole o comando abaixo, trocando `SEU-USUARIO` pelo seu nome de usuário do GitHub, e aperte Enter:
 
    ```
-   git remote add origin https://github.com/SEU-USUARIO/aulamovies.git
+   git remote add origin https://github.com/SEU-USUARIO/bestmovies.git
    ```
 
    **Você deve ver:** nada. Se o terminal só mostrar uma nova linha, deu certo.
@@ -80,7 +80,7 @@ O projeto já está preparado no seu computador. Falta só avisar de onde é o "
 ## 5. Importar o projeto e colocar a chave do TMDB
 
 1. No painel da Vercel, clique em **Add New…** e depois em **Project**.
-2. Na lista "Import Git Repository", ache `aulamovies` e clique em **Import**. (Se não aparecer, clique em "Adjust GitHub App Permissions", dê acesso ao repositório e volte.)
+2. Na lista "Import Git Repository", ache `bestmovies` e clique em **Import**. (Se não aparecer, clique em "Adjust GitHub App Permissions", dê acesso ao repositório e volte.)
 
    **Você deve ver:** uma tela de configuração com **Framework Preset: Next.js** já escolhido sozinho. Não mude nada nela.
 
@@ -101,7 +101,7 @@ O projeto já está preparado no seu computador. Falta só avisar de onde é o "
 
 3. Clique na imagem ou no botão **Visit**.
 
-**Você deve ver:** o Aulamovies no ar, com filmes e capas, em um endereço como `https://aulamovies-xxxx.vercel.app`. Esse é o link que você pode mandar para qualquer pessoa.
+**Você deve ver:** o Bestmovies no ar, com filmes e capas, em um endereço como `https://bestmovies-xxxx.vercel.app`. Esse é o link que você pode mandar para qualquer pessoa.
 
 ## 7. Atualizar o endereço no cadastro do TMDB
 
@@ -109,7 +109,7 @@ O TMDB pede o endereço do seu site. Vale deixar o link certo lá.
 
 1. Abra https://www.themoviedb.org/settings/api e entre.
 2. Na parte dos detalhes do seu app, ache o campo **URL** (ou "URL do app") e edite.
-3. Cole o link da Vercel (por exemplo, `https://aulamovies-xxxx.vercel.app`) e salve.
+3. Cole o link da Vercel (por exemplo, `https://bestmovies-xxxx.vercel.app`) e salve.
 
 **Você deve ver:** a página de configurações recarregada com o novo endereço.
 
